@@ -1,0 +1,22 @@
+body {
+    background-color: whitesmoke;
+    padding: 5px;
+}
+
+.gallery {
+    display: flex;
+}
+
+.galleryItem {
+    padding: 10px;
+    color: blue;
+}
+
+.galleryItem img {
+    padding: auto;
+    width: 200px;
+}
+
+.colourGenerator {
+    padding: 10px;
+}
