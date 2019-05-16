@@ -25,12 +25,11 @@ class ColourGenerator extends Component {
   }
 
   render() {
-    console.log(this.state)
     const divStyle = {
       background: '#' + this.state.hex
     }
     return (
-      <div className={'colourGenerator'}>
+      <div className={'section'}>
         <h2>Random colour:</h2>
         <div style={divStyle}>
           <h1>{this.state.name}</h1>
