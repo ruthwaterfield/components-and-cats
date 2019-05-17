@@ -11,6 +11,10 @@ class CatFact extends Component {
   }
 
   componentDidMount() {
+    this.generateFact()
+  }
+
+  generateFact() {
     const proxyurl = 'https://cors-anywhere.herokuapp.com/'
     const url = 'https://catfact.ninja/fact?max_length=140'
     fetch(proxyurl + url)
@@ -19,6 +23,7 @@ class CatFact extends Component {
       )
       .catch(error => console.log(error))
   }
+
 
   render() {
     return (

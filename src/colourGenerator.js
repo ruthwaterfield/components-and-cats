@@ -8,9 +8,11 @@ class ColourGenerator extends Component {
       name: '',
       hex: ''
     };
+
+    this.generateColour = this.generateColour.bind(this);
   }
 
-  componentDidMount() {
+  generateColour() {
     const proxyurl = 'https://cors-anywhere.herokuapp.com/'
     const url = 'http://www.colourlovers.com/api/colors/random?format=json'
     fetch(proxyurl + url)
@@ -24,6 +26,10 @@ class ColourGenerator extends Component {
       .catch(error => console.log(error))
   }
 
+  componentDidMount() {
+    this.generateColour()
+  }
+
   render() {
     const divStyle = {
       background: '#' + this.state.hex
@@ -31,6 +37,7 @@ class ColourGenerator extends Component {
     return (
       <div className={'section'}>
         <h2>Random colour:</h2>
+        <button onClick={() => this.generateColour()}>Generate</button>
         <div style={divStyle}>
           <h1>{this.state.name}</h1>
         </div>
