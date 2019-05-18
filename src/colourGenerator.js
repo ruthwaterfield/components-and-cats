@@ -36,7 +36,7 @@ class ColourGenerator extends Component {
     }
     return (
       <div className={'section'}>
-        <h2>Random colour:</h2>
+        <h2>Random Colour:</h2>
         <button onClick={() => this.generateColour()}>Generate</button>
         <div style={divStyle}>
           <h3>{this.state.name}</h3>
