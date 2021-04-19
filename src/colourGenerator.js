@@ -13,7 +13,7 @@ class ColourGenerator extends Component {
   }
 
   generateColour() {
-    const proxyurl = 'https://cors-anywhere.herokuapp.com/'
+    const proxyurl = 'https://agile-basin-77106.herokuapp.com/'
     const url = 'http://www.colourlovers.com/api/colors/random?format=json'
     fetch(proxyurl + url)
       .then(response => response.json())
