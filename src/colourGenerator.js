@@ -17,13 +17,37 @@ class ColourGenerator extends Component {
     const url = 'http://www.colourlovers.com/api/colors/random?format=json'
     fetch(proxyurl + url)
       .then(response => response.json())
-      .then(data => {
-        return this.setState({
-          name: data[0].title,
-          hex: data[0].hex
-        })
+      .then(data => this.setState({
+        name: data[0].title,
+        hex: data[0].hex
+      }))
+      .catch(error => {
+        console.log(error)
+        return this.setState(this.randomColourPls())
       })
-      .catch(error => console.log(error))
+  }
+
+  randomColourPls() {
+    const colours = [
+      {
+        name: "Morning Sunshine",
+        hex: "ECFECE"
+      },
+      {
+        name: "smooth blues",
+        hex: "B0C0E5"
+      },
+      {
+        name: "Bub Green",
+        hex: "457C4D"
+      },
+      {
+        name: "Open Doors",
+        hex: "7FE3BE"
+      },
+
+    ]
+    return colours[Math.floor(Math.random()*colours.length)]
   }
 
   componentDidMount() {
